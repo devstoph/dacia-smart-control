@@ -1,0 +1,13 @@
+{
+  "name": "Dacia Smart Control",
+  "short_name": "Dacia Ctrl",
+  "description": "Control and monitor your Dacia Spring EV",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f2f4f3",
+  "theme_color": "#0e6708",
+  "icons": [
+    { "src": "/static/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/static/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
