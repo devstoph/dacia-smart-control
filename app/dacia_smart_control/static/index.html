@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dacia Smart Control</title>
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0e6708">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<main>
+<h1>🚗 Dacia Spring</h1>
+<div id="error" class="error hidden"></div>
+<section class="card battery">
+  <div class="soc-wrap">
+    <div id="soc" class="soc">--%</div>
+    <div id="battery-extra" class="muted">&nbsp;</div>
+  </div>
+  <div id="charging" class="pill">…</div>
+</section>
+
+<section class="grid">
+  <div class="card">
+    <h2>🔌 Charging</h2>
+    <div id="charge-info" class="kv">&nbsp;</div>
+    <button id="btn-charge-start" class="primary">Start charging</button>
+  </div>
+  <div class="card">
+    <h2>❄️ Pre-conditioning</h2>
+    <div id="hvac-info" class="kv">&nbsp;</div>
+    <label for="temp">Target °C
+      <input id="temp" type="number" min="15" max="25" step="0.5" value="21">
+    </label>
+    <div class="row">
+      <button id="btn-hvac-start" class="primary">Start</button>
+      <button id="btn-hvac-stop" class="danger">Stop</button>
+    </div>
+  </div>
+  <div class="card">
+    <h2>📍 Vehicle</h2>
+    <div id="vehicle-info" class="kv">&nbsp;</div>
+    <button id="btn-location">Refresh location</button>
+  </div>
+  <div class="card">
+    <h2>🔔 Find my car</h2>
+    <p class="muted">Horn and lights work for 5 seconds and help locate the car.</p>
+    <div class="row">
+      <button id="btn-horn">Horn</button>
+      <button id="btn-lights">Lights</button>
+    </div>
+  </div>
+</section>
+<p class="muted small">OpenAPI schema: <a href="/openapi.json">/openapi.json</a> · docs: <a href="/docs">/docs</a></p>
+</main>
+<script src="/static/app.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js');
+}
+</script>
+</body>
+</html>
